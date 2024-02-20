@@ -60,6 +60,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "contribution",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "contributionTimeEnd",
 				"outputs": [
 					{
@@ -69,6 +76,29 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "recipient",
+						"type": "address"
+					}
+				],
+				"name": "createProposal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -143,17 +173,47 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
+						"internalType": "uint256",
 						"name": "",
-						"type": "address"
+						"type": "uint256"
 					}
 				],
 				"name": "proposals",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "id",
 						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "votes",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "end",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "executed",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -173,6 +233,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "redeemShares",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "totalshares",
 				"outputs": [
@@ -183,6 +256,37 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "transferShare",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					}
+				],
+				"name": "voteProposal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -251,11 +355,11 @@
 	},
 	"sources": {
 		"contracts/1_Dao.sol": {
-			"keccak256": "0x69b224d5f7cb40f7f8664a20501ddbd74ea3e8e0124b536f270a96c497744a4a",
+			"keccak256": "0xf150b64dffb3cb93a211a39040b8855f7ebb288a5efb991b98a8233995f2e1a6",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5a0422f68db949f50ab7b2c1974f5497e30e0a4e1dae76a1d466da43a2779785",
-				"dweb:/ipfs/QmXBMcgbuKkac6odvbxEBqRSsBp4gU5NzFpUmZnBTNEfYX"
+				"bzz-raw://9951216f1af9f43e08be3a8da9fda46106e2d9dbed4f8c8122eb9d51eab4bbed",
+				"dweb:/ipfs/QmZD4hqBcJiydjtg5j4e4QFTrtVPYjhWS92yZpTQHGxbcq"
 			]
 		}
 	},
