@@ -89,4 +89,22 @@ contract Dao{
         isVoted[msg.sender][proposalId]=true;
         proposal.votes+=numOfshares[msg.sender];
     }
+
+    function _transfer(uint amount,address payable recipient) public {
+        recipient.transfer(amount);
+    }
+    function executeProposal (uint proposalId) public  onlyManager(){
+        Proposal storage proposal = proposals[proposalId];
+        require((proposal.votes*100)/totalshares>=quorum,"Majority does not support");
+        proposal.executed =true;
+        availableFunds-=proposal.amount;
+        _transfer(proposal.amount,proposal.recipient);
+    }
+    function proposalList () view public  returns(Proposal[] memory){
+        Proposal[] memory arr = new Proposal[](nextProposalId-1);
+        for(uint i=0;i<nextProposalId;i++){
+            arr[i]=proposals[i];
+        }
+        return arr;
+    }
 }
